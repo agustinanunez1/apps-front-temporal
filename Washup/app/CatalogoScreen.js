@@ -32,24 +32,25 @@ export default function CatalogoScreen() {
 
 
   useEffect(() => {
-    const datos = [
-      {
-        id: '1',
-        titulo: 'Lavado Básico',
-        precio: 1500,
-        imagen: '../assets/images/image.jpg',
-        descripcion: 'Lavado exterior rápido.',
-      },
-      {
-        id: '2',
-        titulo: 'Lavado Completo',
-        precio: 3000,
-        imagen: '../assets/images/image.png',
-        descripcion: 'Interior y exterior con aspirado.',
-      },
-    ];
-    setServicios(datos);
-  }, []);
+  const datos = [
+    {
+      id: '1',
+      titulo: 'Lavado Básico',
+      precio: 1500,
+      imagen: require('../assets/images/image.png'),
+      descripcion: 'Lavado exterior rápido.',
+    },
+    {
+      id: '2',
+      titulo: 'Lavado Completo',
+      precio: 3000,
+      imagen: require('../assets/images/image.png'),
+      descripcion: 'Interior y exterior con aspirado.',
+    },
+  ];
+  setServicios(datos);
+}, []);
+
 
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => setSeleccionado(item)}>
@@ -95,7 +96,7 @@ export default function CatalogoScreen() {
           >
             <View style={styles.modalCard}>
               <Image
-                source={seleccionado?.imagen}
+                //source={seleccionado?.imagen}
                 style={styles.modalImagen}
               />
               <Text style={styles.modalTitulo}>{seleccionado?.titulo}</Text>
